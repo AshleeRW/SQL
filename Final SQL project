@@ -1,0 +1,47 @@
+here is used the database for kinda like a spotify app and came up with a lot of questions to ask myself as well as questions the instructor gave me. I will provide the question and my SQL answers.
+
+Show Customers (their full names, customer ID, and country) who are not in the US. 
+
+  SELECT CustomerID, FirstName, Country
+  FROM customers
+  Where Country != 'USA'
+
+Show only the Customers from Brazil.
+
+  SELECT *
+ FROM customers
+ WHERE country ='Brazil';
+
+Show customers first and last name from Canada
+
+  SELECT FirstName, LastName
+  FROM customers
+  WHERE country = 'Canada'
+
+Find the Invoices of customers who are from Brazil. The resulting table should show the customer's full name, Invoice ID, Date of the invoice, and billing country.
+
+SELECT cust.FirstName, cust.LastName, inv.InvoiceID, inv.InvoiceDate, inv.BillingCountry 
+FROM Customers AS cust
+Join invoices AS inv
+ON cust.CustomeriD = inv.CustomerId
+WHERE inv.BillingCountry = 'Brazil'
+
+Show the Employees who are Sales Agents.
+
+SELECT LastName, FirstName, Title
+FROM employees
+WHERE title = 'Sales Support Agent';
+
+
+Find a unique/distinct list of billing countries from the Invoice table.
+
+SELECT DISTINCT BillingCountry
+FROM invoices;
+
+
+
+
+
+
+
+
